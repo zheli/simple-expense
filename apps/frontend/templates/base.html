@@ -1,0 +1,77 @@
+{% load staticfiles %}
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap/dist/css/bootstrap.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-daterangepicker/daterangepicker-bs3.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "ng-grid/ng-grid.min.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "nvd3/nv.d3.css" %}">
+<style>
+.close {
+padding: 0 10px;
+}
+.gridStyle {
+border: 1px solid rgb(212,212,212);
+width: auto;
+height: 400px
+}
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer;  }
+.daterangepicker .calendar {
+max-width: 300px;
+}
+svg {
+height:auto;
+}
+</style>
+</head>
+<body ng-app="expense_track.app">
+<div class="container">
+<div class="navbar navbar-inverse" ng-controller="authController" ng-init="authState.user='{{user.username}}'">
+    {% verbatim %}
+    <div ng-controller="navbarController">
+        <ul class="nav navbar-nav">
+            <li ui-sref-active="active"><a ui-sref="readme">Home</a></li>
+            <li ui-sref-active="active"><a ui-sref="list">Expense Edit</a></li>
+            <li ui-sref-active="active"><a ui-sref="stats">Statistics</a></li>
+        </ul>
+    </div>
+    <div ng-show="authState.user" class="navbar-form navbar-right">
+        <input type="submit" ng-model="dummyModel" class="btn btn-primary" ng-click="logout()" value="logout {{authState.user}}"/>
+    </div>
+    <div ng-hide="authState.user">
+        <form id="id_auth_form" class="navbar-form navbar-right" ng-submit="login()">
+            <div class="form-group">
+                <input ng-model="username" required name="username" type="text" placeholder="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <input ng-model="password" required name="password" type="password" placeholder="password" class="form-control">
+            </div>
+            <div class="btn-group">
+                <input type="submit" ng-model="dummyModel" class="btn btn-primary" value="login">
+                <input type="submit" ng-model="dummyModel" class="btn btn-default" value="register" ng-click="register($event)">
+            </div>
+        </form>
+    </div>
+    {% endverbatim %}
+</div>
+<div ui-view></div>
+</div>
+{% block js %}
+<script src="{% static "jquery/dist/jquery.min.js" %}"></script>
+<script src="{% static "underscore/underscore.js" %}"></script>
+<script src="{% static "angular/angular.min.js" %}"></script>
+<script src="{% static "angular-resource/angular-resource.min.js" %}"></script>
+<script src="{% static "autofill-event/src/autofill-event.js" %}"></script>
+<script src="{% static "angular-ui-router/release/angular-ui-router.min.js" %}"></script>
+<script src="{% static "ng-grid/ng-grid-2.0.11.min.js" %}"></script>
+<script src="{% static "angular-bootstrap/ui-bootstrap-tpls.min.js" %}"></script>
+<script src="{% static "moment/min/moment.min.js" %}"></script>
+<script src="{% static "bootstrap-daterangepicker/daterangepicker.js" %}"></script>
+<script src="{% static "ng-bs-daterangepicker/dist/ng-bs-daterangepicker.min.js" %}"></script>
+<script src="{% static "d3/d3.min.js" %}"></script>
+<script src="{% static "nvd3/nv.d3.min.js" %}"></script>
+<script src="{% static "angularjs-nvd3-directives/dist/angularjs-nvd3-directives.min.js" %}"></script>
+<script src="{% static "js/script.js" %}"></script>
+{% endblock %}
+</body>
+</html>

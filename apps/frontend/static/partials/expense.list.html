@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-xs-12 col-md-9">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+            <label>Date Range</lable>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+            <input type="daterange" ng-model="dateRange" size="24">
+            </div>
+            <div class="col-xs-12 col-md-8">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" ng-click="applyDateRange()">Apply</button>
+                <button type="button" class="btn btn-default" ng-click="clearDateRange()">Clear</button>
+            </div>
+            </div>
+        </div>
+        <div class="row"><span>&nbsp;</span></div>
+        <div class="row"><div class="col-xs-12 col-md-12">
+            <div class="gridStyle" ng-grid="gridOptions"></div>
+        </div></div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+        <form class="form">
+            <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                <label>Date</label>
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="expense.date" is-open="datePickerOpened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" />
+                    <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="datePickerOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                <label>Time</label>
+                <timepicker ng-model="expense.time" hour-step="1" minute-step="15" show-meridian="false"></timepicker>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                <label>Amount</label>
+                <input type="text" name="amount" ng-model="expense.amount">
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                <label>Description</label>
+                <input type="text" name="description" ng-model="expense.description">
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                <label>Comment</label>
+                <input type="textarea" name="comment" ng-model="expense.comment">
+                </div>
+            </div>
+            </div>
+            <button type="submit" ng-click="create()" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>

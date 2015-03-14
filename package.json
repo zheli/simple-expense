@@ -1,0 +1,12 @@
+{
+  "name": "toptal-proj",
+  "version": "0.0.0",
+  "description": "",
+  "devDependencies": {
+    "coffee-script": "",
+    "grunt": "",
+    "grunt-contrib-concat": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}

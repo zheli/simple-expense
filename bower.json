@@ -1,0 +1,19 @@
+{
+  "name": "expense_track",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "1.2.19",
+    "angular-resource": "1.2.19",
+    "underscore": "",
+    "bootstrap": "",
+    "angular-ui-router": "",
+    "autofill-event": "1.0.0",
+    "ng-grid": "",
+    "angular-bootstrap": "",
+    "d3": "~3.4.10",
+    "nvd3": "~1.1.15-beta",
+    "angularjs-nvd3-directives": "~0.0.7",
+    "ng-bs-daterangepicker": ""
+  },
+  "private": true
+}

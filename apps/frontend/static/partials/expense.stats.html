@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <label>Year: </label>
+        <div class="btn-group">
+            <span ng-repeat="year in year_list">
+                <button type="button" class="btn btn-default" ng-click="fetch(year)">{{year}}</button>
+            </span>
+        </div>
+            <button type="button" class="btn btn-primary" ng-click="fetch('all')">All</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+    <h3>Week Total Spending</h3>
+    <nvd3-discrete-bar-chart
+        id='total_spend'
+        data="stats.total"
+        height="400"
+        showXAxis="true"
+        showYAxis="true"
+        showControls="true"
+        forcey="[5000]"
+        showValues="true"
+        tooltips="true"
+        y="yFunction()"
+        >
+    </nvd3-discrete-bar-chart>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+    <h3>Average Day Spending</h3>
+    <nvd3-discrete-bar-chart
+        id='average_day_spending'
+        data="stats.average"
+        height="400"
+        showXAxis="true"
+        showYAxis="true"
+        tooltips="true"
+        showLegend="true"
+        showControls="true"
+        showValues="true"
+        forcey="[500]"
+        interactive="true">
+        <svg></svg>
+    </nvd3-discrete-bar-chart>
+    </div>
+</div>

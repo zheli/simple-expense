@@ -1,0 +1,49 @@
+[
+{
+  "pk": 1,
+  "model": "auth.user",
+  "fields": {
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "is_active": true,
+    "is_superuser": true,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": [],
+    "password": "pbkdf2_sha256$12000$Vp9cyWFgwZie$7KwwkuDNESFgBiKalJyK5oGxicOFCvHz665xUQnoSig=",
+    "email": "root@example.com"
+  }
+},
+{
+  "pk": 2,
+  "model": "auth.user",
+  "fields": {
+    "username": "tester1",
+    "first_name": "tester1",
+    "last_name": "tester1",
+    "is_active": true,
+    "is_superuser": false,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": [],
+    "password": "pbkdf2_sha256$12000$Vp9cyWFgwZie$7KwwkuDNESFgBiKalJyK5oGxicOFCvHz665xUQnoSig=",
+    "email": "tester1@example.com"
+  }
+},
+{
+  "pk": 3,
+  "model": "auth.user",
+  "fields": {
+    "username": "tester2",
+    "first_name": "tester2",
+    "last_name": "tester2",
+    "is_active": true,
+    "is_superuser": false,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": [],
+    "password": "pbkdf2_sha256$12000$Vp9cyWFgwZie$7KwwkuDNESFgBiKalJyK5oGxicOFCvHz665xUQnoSig=",
+    "email": "tester2@example.com"
+  }
+}]
